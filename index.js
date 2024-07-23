@@ -1,34 +1,10 @@
 const productos = [
-    {nombre: "Caño Agua Termofusión 1/2",
-     precio: 8000,
-     cantidad: 0
-    },
-
-    {nombre: "Caño Agua Termofusión 3/4",
-     precio: 9500,
-     cantidad: 0
-    },
-
-    {nombre: "Caño Agua Termofusión 1",
-     precio: 11000,
-     cantidad: 0
-    },
-
-    {nombre: "Caño Gas Termofusión 1/2",
-     precio: 12000,
-     cantidad: 0
-    },
-
-    {nombre: "Caño Gas Termofusión 3/4",
-     precio: 15000,
-     cantidad: 0
-    },
-   
-    {nombre: "Caño Gas Termofusión 1",
-     precio: 18000,
-     cantidad: 0
-    },
-
+    {"Caño Agua Termofusión 1/2"},
+    {"Caño Agua Termofusión 3/4"},
+    {"Caño Agua Termofusión 1"},
+    {"Caño Gas Termofusión 1/2"},
+    {"Caño Gas Termofusión 3/4"},
+    {"Caño Gas Termofusión 1"},
 ];
 
 /////////////////////////////////////////////////
@@ -48,19 +24,12 @@ function finalizarCompra() {
     function mostrarProductos() {
         let cantidad = 0;
         let opcionProducto = parseInt(prompt(
-            "Bienvenido. Seleccione una opción:\n" +
-            "1. Caño Agua Termofusión 1/2\n" +
-            "2. Caño Agua Termofusión 3/4\n" +
-            "3. Caño Agua Termofusión 1\n" +
-            "4. Caño Gas Termofusión 1/2\n" +
-            "5. Caño Gas Termofusión 3/4\n" +
-            "6. Caño Gas Termofusión 1\n"
+            "Bienvenido. Seleccione una opción:\n" + productos.join("\n")
             ));
       
           switch(opcionProducto) {
             case 1:
                 cantidad = parseInt(prompt("Seleccione cuantos"));
-
                 
               break;
             case 2:
@@ -119,4 +88,4 @@ function menu() {
 
   
 
-        menu();
+  menu();
