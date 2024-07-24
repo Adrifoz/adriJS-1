@@ -7,13 +7,12 @@ const productos = [
   "6. Caño Gas Termofusión 1"
 ];
 
-const cantidades = [];
-
-const carrito = [];
+const arrayVacio = [];
+let carrito = [];
 
 let total = 0;
 let nombre
-let comprobacion = carrito.includes(nombre);
+
 /////////////////////////////////////////////////
 
 
@@ -25,11 +24,11 @@ function finalizarCompra() {
 
     const pagar = confirm("¿Desea efectuar el pago?");
     if (total !== 0 && pagar) {
-       
         confirm("El total es $" + total + "\n\n" + "Historial de compra" + "\n\n" + carrito.join("\n") +"\n\n" +"¿Desea confirmar la compra?");
         alert("Compra realizada con éxito");
         alert("Gracias por visitarnos.");
         total = 0;
+        carrito = arrayVacio;
         menu();
     }else if(pagar){
         alert("Todavía no tiene nada en su carrito")
@@ -37,9 +36,11 @@ function finalizarCompra() {
     }else{
         alert("Gracias por visitarnos.");
         total = 0;
+        carrito = arrayVacio;
     }
-    return;
-    };
+    return
+    
+  };
 
     function suma(precioTotal){
       total += precioTotal
@@ -48,6 +49,7 @@ function finalizarCompra() {
     function addCarrito(nombre,cantidad){
       carrito.push(cantidad)
       carrito.push(nombre)
+      console.log(carrito)
       
     }
 
